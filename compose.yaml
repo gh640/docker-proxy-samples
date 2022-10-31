@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  proxy:
+    build: ./services/proxy
+  client:
+    build: ./services/client
+    environment:
+      HTTP_PROXY: "http://proxy:8899"
+      HTTPS_PROXY: "http://proxy:8899"
+      NO_PROXY: ""
